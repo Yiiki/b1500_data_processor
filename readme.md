@@ -23,3 +23,5 @@ author: YZY, Tsinghua, School of Integrated Circuits, 2022-10-30
 3.如果csv文件不完整（例如测试中途取消，导致约定的测试点没有采集完全），则脚本将会跳过该csv文件，不会产生对应的输出文件；
 
 4.目前版本只适用于仅包含一个"DataName"的csv文件；包含多个"DataName"的csv文件可能是由于测试时选择了append模式导致；
+
+5.运行主程序时请确保MATLAB路径位于顶层文件夹``tool_csv2xlsx``，否则程序中的相对路径会找不到数据；
