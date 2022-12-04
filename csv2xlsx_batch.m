@@ -9,7 +9,7 @@ for i=1:item_num
     fprintf('processing %.100s',file_raw)
     filen=file_raw(1:end-4);
     filename=['./data/',filen,'.csv'];
-    export_filename=['./date_export/',filen,'.xlsx'];
+    export_filename=['./data_export/',filen,'.xlsx'];
     tag = b15csv2xlsx_v2(filename,export_filename);
     if tag==1
         fprintf('...succeed.\n')

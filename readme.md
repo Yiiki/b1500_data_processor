@@ -1,6 +1,8 @@
-author: YZY, Tsinghua, School of Integrated Circuits, 2022-10-30
+author: YZY, Tsinghua, School of Integrated Circuits
 
-适用于将B1500测试生成的csv文件转成formated xlsx文件；
+first edit @ 2022-10-30
+
+csv2xlsx_batch适用于将B1500测试生成的csv文件批量转成formated xlsx文件；
 
 特别是FET测试产生的矩阵数据；
 
@@ -25,3 +27,14 @@ author: YZY, Tsinghua, School of Integrated Circuits, 2022-10-30
 4.目前版本只适用于仅包含一个"DataName"的csv文件；包含多个"DataName"的csv文件可能是由于测试时选择了append模式导致；
 
 5.运行主程序时请确保MATLAB路径位于顶层文件夹``tool_csv2xlsx``，否则程序中的相对路径会找不到数据；
+
+-------------------------------------------------------------------------
+
+# update for appended mode file @ 2022-12-04
+
+-------------------------------------------------------------------------
+
+csv2xlsx_batch_invx适用于append测试模式生成的数据块文件，各个数据块之间指定'appvar'进行标记区分
+其余1500测试条件应该相同；
+
+生成的xlsx文件将appvar作为dim2，同一块内的不同观测变量作为sheet维度导出；
