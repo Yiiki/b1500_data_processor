@@ -60,6 +60,9 @@ csv2xlsx_batch_single_block适用于只有单个数据块的数据文件；
 
 脚本：csv2xlsx_batch_invx_vddx.m适用于xlsx文件里append了多个port的INV测试数据，且每个port还扫描了多组vdd参数
 
+fliptag=0，当csv端口排列顺序与指定的端口顺序一致时
+fliptag=1，当csv端口排列顺序与指定的端口顺序相反时
+
 不同vdd测试的数据块，放在对应后缀的xlsx文件里；
 每个xlsx文件里，并行测试的变量分列不同sheet；
 每个sheet，列出不同端口的变量值；

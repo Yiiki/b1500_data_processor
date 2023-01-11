@@ -13,7 +13,8 @@ suffix='.xlsx';
 tag_vec={'Vbg', 'Vdd', 'Vo1', 'Idd', 'Ibg'};
 % appended define
 appnam='port';
-appvar={'Dev3Port2'};% FIFO
+appvar={'Dev1Port3','Dev3Port2'};% FIFO
+fliptag=1;
 
 listing=dir('./data/*.csv');
 item_num=length(listing);
@@ -27,7 +28,7 @@ for i=1:item_num
     filen=file_raw(1:end-4);
     filename=['./data/',filen,'.csv'];
     export_filename=['./data_export/',filen];
-    tag = b15csv2xlsx_invx_vddx(filename,export_filename,suffix,tag_vec,appnam,appvar);
+    tag = b15csv2xlsx_invx_vddx_flip(filename,export_filename,suffix,tag_vec,appnam,appvar,fliptag);
     if tag==1
         fprintf('...succeed.\n')
     elseif tag==0 
