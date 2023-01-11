@@ -8,12 +8,12 @@
 
 % the output xlsx file sorts the ObsX to SheetX, Var1 as dim1, appvar as
 % dim2
-
+suffix='.xlsx';
 % ------  Var1   Var2  Obs1   Obs2   Obs3
 tag_vec={'Vbg', 'Vdd', 'Vo1', 'Idd', 'Ibg'};
 % appended define
 appnam='port';
-appvar={'Dev3Port2','Dev1Port3'};% FIFO
+appvar={'Dev3Port2'};% FIFO
 
 listing=dir('./data/*.csv');
 item_num=length(listing);
@@ -26,8 +26,8 @@ for i=1:item_num
     fprintf('processing %.100s',file_raw)
     filen=file_raw(1:end-4);
     filename=['./data/',filen,'.csv'];
-    export_filename=['./data_export/',filen,'.xlsx'];
-    tag = b15csv2xlsx_invx(filename,export_filename,tag_vec,appnam,appvar);
+    export_filename=['./data_export/',filen];
+    tag = b15csv2xlsx_invx_vddx(filename,export_filename,suffix,tag_vec,appnam,appvar);
     if tag==1
         fprintf('...succeed.\n')
     elseif tag==0 
